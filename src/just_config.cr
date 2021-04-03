@@ -1,6 +1,14 @@
 # TODO: Write documentation for `JustConfig`
 module JustConfig
-  VERSION = "0.1.0"
+  extend JustConfig
 
-  # TODO: Put your code here
+  def interpolate(raw_config : String, env = ENV)
+    interpolated = env.keys.reduce(raw_config) { |conf, k|
+      key = "\#{?" + "#{k}" + "}"
+      conf.gsub(key, env[k])
+    }
+
+    # remove rows where no interpolation took place
+    interpolated.gsub(/.*\{\?.*\}.*\n?/, "")
+  end
 end
