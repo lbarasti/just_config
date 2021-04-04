@@ -1,6 +1,8 @@
 name: just_config
 version: 0.2.0
 
+description: "A shard to substitute environment variables into your yaml config"
+
 authors:
   - lbarasti <lbarasti@users.noreply.github.com>
 
