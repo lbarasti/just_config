@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="crystal_docs.project_version" content="1.0.0">
 <meta name="crystal_docs.project_name" content="just_config">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="just_config">
-  <title>JustConfig - just_config 0.2.0</title>
+  <title>JustConfig - just_config 1.0.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        1.0.0
       </span>
     </div>
   </div>
@@ -82,27 +82,19 @@
     Overview
   </h2>
 
-  <p><span class="flag orange">TODO</span>  Write documentation for <code><a href="JustConfig.html">JustConfig</a></code></p>
+  <p>Let your config class (or record) extend <code><a href="JustConfig.html">JustConfig</a></code> to add support
+for variable interpolation on yaml representations of your config.</p>
+
+<p>Variables to be interpolated must appear on the right-hand side of yaml keys, e.g.</p>
+
+<p>db:
+  url: #{?DB_URL}</p>
 
 
 
 
 
 
-
-  <h2>
-    <a id="extended-modules" class="anchor" href="#extended-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Extended Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="JustConfig.html">JustConfig</a></li>
-    
-  </ul>
 
 
 
@@ -132,29 +124,26 @@
 
 
 
-
-
   <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Summary
+    Class Method Summary
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#from_yaml(yaml,env)-instance-method" class="signature"><strong>#from_yaml</strong>(yaml, env)</a>
+        <a href="#interpolate(raw_config:String,env=ENV)-class-method" class="signature"><strong>.interpolate</strong>(raw_config : String, env = <span class="t">ENV</span>)</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#interpolate(raw_config:String,env=ENV)-instance-method" class="signature"><strong>#interpolate</strong>(raw_config : String, env = <span class="t">ENV</span>)</a>
+          <div class="summary"><p>Replaces any identifiers wrapped in <code>#{?}</code> occurring in <code>raw_config</code> with corresponding values in <code>env</code>.</p></div>
         
       </li>
     
   </ul>
+
+
 
 
 
@@ -167,24 +156,32 @@
 
 
 
-
-
   <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Detail
+    Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="from_yaml(yaml,env)-instance-method">
+    <div class="entry-detail" id="interpolate(raw_config:String,env=ENV)-class-method">
       <div class="signature">
         
-        def <strong>from_yaml</strong>(yaml, env)
+        def self.<strong>interpolate</strong>(raw_config : String, env = <span class="t">ENV</span>)
 
-        <a class="method-permalink" href="#from_yaml(yaml,env)-instance-method">#</a>
+        <a class="method-permalink" href="#interpolate(raw_config:String,env=ENV)-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Replaces any identifiers wrapped in <code>#{?}</code> occurring in <code>raw_config</code>
+with corresponding values in <code>env</code>.
+Any row corresponding to unmatched identifiers in <code>raw_config</code> will be removed.</p>
+
+<p><code>raw_config</code>: a String in yaml format.
+<code>env</code>: a hash-like object.</p>
+        </div>
       
       <br/>
       <div>
@@ -192,20 +189,8 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="interpolate(raw_config:String,env=ENV)-instance-method">
-      <div class="signature">
-        
-        def <strong>interpolate</strong>(raw_config : String, env = <span class="t">ENV</span>)
 
-        <a class="method-permalink" href="#interpolate(raw_config:String,env=ENV)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
+
 
 
 
