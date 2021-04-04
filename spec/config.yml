@@ -1,0 +1,6 @@
+max_users: #{?MAX_USERS}
+db:
+  host: #{?HOST}
+  username: admin
+  password: a-secret
+  password: #{?PASSWORD}

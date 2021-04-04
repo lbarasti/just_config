@@ -11,4 +11,8 @@ module JustConfig
     # remove rows where no interpolation took place
     interpolated.gsub(/.*\{\?.*\}.*\n?/, "")
   end
+
+  def from_yaml(yaml, env)
+    {{@type}}.from_yaml(JustConfig.interpolate(yaml, env))
+  end
 end
