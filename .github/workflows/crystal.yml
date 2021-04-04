@@ -1,0 +1,19 @@
+name: Crystal spec
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    container:
+      image: crystallang/crystal
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: crystal spec
