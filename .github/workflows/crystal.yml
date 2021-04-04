@@ -17,3 +17,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run: crystal spec
+    - name: Build docs
+      run: crystal docs
+    - name: deploy docs
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: oprypin/push-to-gh-pages@v3
+      with:
+        publish_dir: ./docs

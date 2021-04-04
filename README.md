@@ -1,6 +1,7 @@
 ![GitHub release](https://img.shields.io/github/release/lbarasti/just_config.svg)
 ![Build Status](https://github.com/lbarasti/just_config/workflows/Crystal%20spec/badge.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://lbarasti.github.io/just_config)
 
 # just_config
 
