@@ -9,15 +9,15 @@ A shard to substitute environment variables into your yaml config.
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     just_config:
-       github: lbarasti/just_config
-   ```
+```yaml
+dependencies:
+  just_config:
+    github: lbarasti/just_config
+```
 
-2. Run `shards install`
+Run `shards install`
 
 ## Usage
 Require `just_config` and let your config class (or record) extend `JustConfig`.
